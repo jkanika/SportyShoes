@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Purchase Report</title>
 </head>
 <body>
 
@@ -12,6 +12,7 @@
 	<font color="red">${PurchaseReport}</font>
 	<font color="red">${purchaseReportCat}</font>
 	<font color="red">${purchaseReportDate}</font>
+	<font color="red">${puchaseerror}</font>
 	<form action="/purchasereport" method="post">
 	Enter the category id to view report by Category 
 	<input type ="text" name="CategoryID">
@@ -24,6 +25,9 @@
 	<input type ="date" name="DateView">
 	<input type="submit" value ="View">
 	</form>
-	
+	<br>
+	<form action ="admin" method="get">
+		<input type ="submit" name="back" value="Back">
+	</form>
 </body>
 </html>

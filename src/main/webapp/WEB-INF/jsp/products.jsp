@@ -4,15 +4,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Products</title>
 </head>
 <body>
 
 	<h3>Product List</h3>
 		<font color="red">${product}</font>
 		<font color="red">${CategoryChanged}</font>
+		<font color="red">${errorMessage}</font>
 	<form action="/changecategory" method="get">
 	<input type="submit" value ="Change Category">
+	</form>
+	<br>
+	<form action ="admin" method="get">
+		<input type ="submit" name="back" value="Back">
 	</form>
 </body>
 </html>

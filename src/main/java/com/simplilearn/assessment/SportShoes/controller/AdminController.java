@@ -29,6 +29,11 @@ public class AdminController {
 		return "login";
 	}
 	
+	@RequestMapping(value="/admin", method = RequestMethod.GET)
+	public String showAdminPage(ModelMap model) {
+		return "admin";
+	}
+	
 	// GET to admin page
 	@PostMapping("/login")
 	public String showAdminPage(ModelMap model,  @RequestParam String AdminID, @RequestParam String AdminPass) {

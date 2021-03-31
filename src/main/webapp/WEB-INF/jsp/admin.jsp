@@ -15,18 +15,19 @@
 	<input type="submit" value ="Change Password">
 	</form>
 	<br>
-	<form action="user" method="get">
+	<font color="red">${error}</font>
+	<form action="user" method="post">
 		View User Details <input type = "text" name="UserId">
 		<input type ="submit" value="Get User Details" name="getUserDetails">
 	</form>
 	
 	<br>
 	<font color="red">${CategoryChanged}</font>
+	<font color="red">${errorMessage}</font>
 	<form action="products" method="get">
 		View Product Details <input type = "text" name="ProductId">
 		<input type ="submit" value="Get Product Details" name="getProductDetails">
 	</form>
-	
 	<br>
 	<form action="purchasereport">
 		View Purchase report

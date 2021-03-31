@@ -43,6 +43,10 @@ public class PurchaseController {
 				i++;
 			}
 		}
+		if(mapPurchase.size() ==0) {
+			model.put("puchaseerror", "No records found");
+			return("purchasereport");
+		}
 		model.put("purchaseReportCat",mapPurchase);
 		return("purchasereport");
 	}
@@ -51,7 +55,7 @@ public class PurchaseController {
 	public String showPurchaseReportDate(ModelMap model, @RequestParam String DateView) throws ParseException {
 		HashMap<Integer, String> mapPurchase = new HashMap<Integer, String>();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		System.out.println(DateView);
+		//System.out.println(DateView);
 		int i=1;
 		List<Purchase> purchases = PurchaseRepo.findAll();
 		for (Purchase purchase : purchases) {
@@ -60,6 +64,10 @@ public class PurchaseController {
 				mapPurchase.put(i, purchase.toString());
 				i++;
 			}
+		}
+		if(mapPurchase.size() ==0) {
+			model.put("puchaseerror", "No records found");
+			return("purchasereport");
 		}
 		model.put("purchaseReportDate",mapPurchase);
 		return("purchasereport");

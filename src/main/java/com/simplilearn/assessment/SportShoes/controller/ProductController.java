@@ -1,6 +1,7 @@
 package com.simplilearn.assessment.SportShoes.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,11 @@ public class ProductController {
 		long id = Long.parseLong(ProductId);
 		if(id != 0) {
 			//System.out.println(userRepo.findById(id));
+			Optional<Product> product = ProductRepo.findById(id);
+			if(product.isEmpty()) {
+				model.put("errorMessage", "Invalid ProductId");
+	            return "admin";
+			}
 			model.put("product",ProductRepo.findById(id));
 			return("products");
 		}
